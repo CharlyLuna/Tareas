@@ -11,6 +11,19 @@ function serieE(limit) {
   return sum;
 }
 
+// serie infinita de S = 4 -(4/3)+(4/5)-(4/7)...
+function serieS(limit) {
+  let sum = 4;
+  /* se agrega este contador del total de elementos
+  para comparar con el limite que establecimos;*/
+  let elements = 2; // inicia en 2 ya que en el primer ciclo ya se estan tomando dos elementos;
+  let i, j;
+  for (i = 3, j = -4; elements <= limit; i += 2, j *= -1, elements++) {
+    sum += j / i;
+  }
+  return sum;
+}
+
 // funcion complementaria
 function _factorial(number) {
   let factorial = 1;
@@ -20,4 +33,5 @@ function _factorial(number) {
   return factorial;
 }
 // resultado de las series infinitas
-console.log(serieE(10));
+console.log(serieE(100));
+console.log(serieS(100));
